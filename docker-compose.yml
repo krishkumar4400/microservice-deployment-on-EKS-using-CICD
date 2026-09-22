@@ -2,8 +2,7 @@ name: tax calculator app
 
 services:
   service-a:
-    build: ./service-a
-    image: service-a
+    image: krishkumar4400/service-a:latest
     container_name: service-a
 
     ports:
@@ -13,14 +12,13 @@ services:
       - service-b
 
     env_file:
-      - ./service-a/.env
+      - ./services/service-a/.env
 
     networks:
       - tax-container
 
   service-b:
-    build: ./service-b
-    image: service-b
+    image: krishkumar4400/service-b:latest
     container_name: service-b
 
     ports:
@@ -28,24 +26,24 @@ services:
     networks:
       - tax-container
 
-  service-c:
-    build: ./service-c
-    image: service-c
-    container_name: service-c
+  # service-c:
+  #   build: ./service-c
+  #   image: service-c
+  #   container_name: service-c
 
-    ports:
-      - "5173:80"
+    # ports:
+    #   - "5173:80"
 
     # env_file:
     #   - ./service-c/.env
-    environment:
-      - VITE_API_URL=http://localhost:3000
+    # environment:
+    #   - VITE_API_URL=http://localhost:3000
 
-    depends_on:
-      - service-a
+    # depends_on:
+    #   - service-a
 
-    networks:
-      - tax-container
+    # networks:
+    #   - tax-container
 
 networks:
   tax-container:
