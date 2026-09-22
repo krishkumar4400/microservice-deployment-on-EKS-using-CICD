@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-b-deployment
+  name: service-c-deployment
   labels:
-    name: service-b-deployment
+    name: service-c-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-b
+      app: service-c
   template:
     metadata:
       labels:
-        app: service-b
+        app: service-c
     spec:
       containers:
-        - image: krishkumar4400/service-b:latest
-          name: service-b-container
+        - image: krishkumar4400/service-c:latest
+          name: service-c-container
           imagePullPolicy: Always
           resources:
             requests:
@@ -26,5 +26,5 @@ spec:
               cpu: "500m"
               memory: "512Mi"
           ports:
-            - containerPort: 4000
-              name: service-b-port
+            - containerPort: 5173
+              name: service-c-port

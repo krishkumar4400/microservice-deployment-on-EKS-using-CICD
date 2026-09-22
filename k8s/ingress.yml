@@ -5,14 +5,16 @@ metadata:
   labels:
     app.kubernetes.io/name: myingress
 spec:
+  ingressController: nginx
   rules:
-  - host: <Host>
+    selector:
+      app: service-c
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
           service:
-            name: <Service>
+            name: service-c
             port: 
-              number: <Port>
+              number: 80
