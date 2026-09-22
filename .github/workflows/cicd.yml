@@ -1,0 +1,20 @@
+name: Tax Calculator Spring CI/CD to AWS EKS
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - main
+
+# jobs:
+    # building and testing
+    # docker build push
+    # deploy to EKS
+
+jobs:
+    build-test:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              run: echo ""
