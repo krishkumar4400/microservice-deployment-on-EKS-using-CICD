@@ -26,5 +26,5 @@ spec:
               cpu: "500m"
               memory: "512Mi"
           ports:
-            - containerPort: 3000
+            - containerPort: 4000
               name: service-b-port
